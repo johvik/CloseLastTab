@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Close Last Tab",
-  "version": "1.2",
+  "version": "1.3",
   "description": "When the last tab is closed it closes the window and does not restore that tab at the next startup. Requires that browser.tabs.closeWindowWithLastTab is set to false in about:config.",
   "background": {
     "scripts": [
