@@ -32,10 +32,14 @@ browser.tabs.onRemoved.addListener(
             //  container site      chrome://branding/content/icon32.png  about:newtab
             //  file                chrome://branding/content/icon32.png  about:newtab
             //  reopen file         undefined                             file-url
+            //
+            // In a private window
+            //  Test   favIconUrl                                          url
+            //  blank  chrome://browser/skin/privatebrowsing/favicon.svg   about:privatebrowsing
 
             const favIconUrl = windowInfo.tabs[0].favIconUrl;
             const url = windowInfo.tabs[0].url;
-            if ((!favIconUrl || favIconUrl.startsWith('chrome:')) && ['about:blank', 'about:newtab'].includes(url)) {
+            if ((!favIconUrl || favIconUrl.startsWith('chrome:')) && ['about:blank', 'about:newtab', 'about:privatebrowsing'].includes(url)) {
               browser.windows.remove(removeInfo.windowId);
             }
           } else {
